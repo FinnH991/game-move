@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var speed: float = 200.0
-var direction : Vector2 = Vector2.RIGHT
+var direction : Vector2 = Vector2.LEFT
 
 func _process(delta: float) -> void:
 	position.x += speed * delta
