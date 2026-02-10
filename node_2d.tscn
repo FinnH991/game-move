@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://h3qsnl816d1v"]
 
 [ext_resource type="Texture2D" uid="uid://cqwsjwy01qrrf" path="res://icon.svg" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://cwwrlm6qsxg2h" path="res://sprite_2d.gd" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dma3wecjcdloj" path="res://path_follow_2d.gd" id="1_epypp"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -464, 8, 0, 0, 0, 0, -285, -267, 0, 0, 0, 0, 12, -274, 0, 0, 0, 0, 353, -249, 0, 0, 0, 0, 445, -34, 0, 0, 0, 0, 315, 234, 0, 0, 0, 0, -226, 234, 0, 0, 0, 0, -465, 5)
+}
+point_count = 8
 
 [node name="Node2D" type="Node2D" unique_id=1730921109]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1187924423]
+[node name="Path2D" type="Path2D" parent="." unique_id=1680561343]
 position = Vector2(617, 334)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=383795042]
+position = Vector2(-464, 8)
+rotation = -0.9937823
+script = ExtResource("1_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1187924423]
+position = Vector2(6.665146, -0.7588806)
+rotation = 0.9937823
 texture = ExtResource("1_0e48y")
-script = ExtResource("2_epypp")
